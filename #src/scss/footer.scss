@@ -1,0 +1,49 @@
+.footer {
+  width: 100%;
+  background-color: $addColor;
+  &__networks{
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  &__refs {
+    display: flex;
+    a {
+      background-color: transparent;
+      border: none;
+      display: inherit;
+			width: 94px;
+      height: 34px;
+      align-items: center;
+			justify-content: center;
+    }
+  }
+  &__content {
+    width: 920px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+
+.menu {
+  padding: 60px 0 40px 0;
+  align-self: center;
+  ul li {
+		font-family: $fontFamily;
+		font-size: 14px;
+		line-height: 16px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: $mainColor;
+	}
+	li {
+		display:inline; 
+		float:left; 
+		padding:0 10px;
+		margin:0;
+	}
+}
+

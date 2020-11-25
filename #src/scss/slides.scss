@@ -1,0 +1,166 @@
+.slides {
+  width: 100%;
+	background-color: $addColor;
+	&__content {
+		position: relative;
+		width: 920px;
+		display: flex;
+		background-color: $addColor;
+		margin: auto;
+		flex-direction: column;
+	}
+	&__gallery {
+		display: flex;
+		align-items: center;	
+		li {
+			display:inline; 
+			float:left; 
+			padding: 40px 40px 40px 0;
+			margin:0;
+			position: relative;
+		}
+		img {
+			width: 120px;
+			height: 90px;
+			z-index: 1;
+		}
+		.bg {
+			background-color: rgba(75, 73, 73, 0.8);
+			position: absolute;
+			width: 120px;
+			height: 90px;
+			z-index: 10;
+		}
+		.active {
+			background-color: transparent;
+		}
+
+		div::after {
+			content: url("../img/icons/all.svg");
+			padding: 8px;
+		}
+		a {
+			align-self: center;
+			font-family: $fontFamily;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0em;
+			text-align: left;
+			color: #BFBFBF;
+		}
+	}
+	&__currentPhoto {
+		position: relative;
+		overflow: hidden;
+		height: 690px;
+		width: 920px;
+		img {
+			min-width: 100%;
+			min-height: 100%;
+			display: block;
+		}
+
+		.addanim {
+			animation-name: add_anim;
+			animation-duration: 4s;
+			animation-timing-function: linear;
+			animation-direction: normal;
+			animation-delay: 0;
+			animation-play-state: running;
+			animation-fill-mode: forwards;
+		}
+		@keyframes add_anim {
+			0% {
+				opacity:0;
+			}
+			6% {
+				opacity:0;
+			}
+			24% {
+				opacity:1;
+			}
+			30% {
+				opacity:1;
+			}
+			100% {
+				opacity:1;
+			}
+		}
+
+		.remanim {
+			animation-name: rem_anim;
+			animation-duration: 6s;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
+			animation-direction: normal;
+			animation-delay: 0;
+			animation-fill-mode: forwards;
+		}
+		@keyframes rem_anim {
+			0% {
+				opacity: 1;
+			}
+			6% {
+				opacity:1;
+			}
+			24% {
+				opacity:0;
+			}
+			30% {
+				opacity:0;
+			}
+			100% {
+				opacity:0;
+			}
+		}
+	}
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title {
+		display: flex;
+		flex-direction: column;
+		h4 {
+			font-family: $fontFamily;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0em;
+			text-align: center;
+			color: #F5F5F5;
+		}
+		p {
+			font-family: $fontFamily;
+			font-size: 14px;
+			line-height: 13px;
+			letter-spacing: 0em;
+			text-align: right;
+			color: #F5F5F5;
+			align-self: center;
+		}
+		
+	}
+	#prevPhoto, #nextPhoto {
+		background-color: transparent;
+		background-repeat: no-repeat;
+		
+		width: 40px;
+		height: 10px;
+		margin: auto 0;
+	}
+	#prevPhoto {
+		background-image: url(../img/icons/prevPhoto.svg);
+	}
+	#prevPhoto.act {
+		background-image: url(../img/icons/prevPhotoActive.svg);
+		cursor: pointer;
+	}
+	#nextPhoto {
+		background-image: url(../img/icons/nextPhoto.svg);
+	}
+	#nextPhoto.act {
+		background-image: url(../img/icons/nextPhotoActive.svg);
+		cursor: pointer;
+	}
+
+}

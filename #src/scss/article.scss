@@ -1,0 +1,106 @@
+.article {
+	width: 100%;
+	&__content {
+		width: 920px;
+		display: flex;
+		margin: auto;
+		flex-direction: column;
+	}
+	&__head {
+		display: inherit;
+		padding-top: 100px;
+	}
+	&__header {
+		h3 {
+			font-family: $headerFamily;
+			font-size: 40px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 40px;
+			letter-spacing: 0em;
+			text-align: left;
+		}
+	}
+	&__text {
+		padding-left: 100px;
+		table, th, td {
+			border: 1px solid transparent; //transparent
+			vertical-align: top;
+		}
+		th:first-of-type {
+			font-family: $fontFamily;
+			font-size: 20px;
+			line-height: 40px;
+			letter-spacing: 0.05em;
+			color: #BFBFBF;
+			padding: 0 30px;
+		}
+		th:last-of-type {
+			padding-bottom: 10px;
+		}
+		th {
+			font-family: $fontFamily;
+			font-size: 16px;
+			line-height: 26px;
+			letter-spacing: 0em;
+			text-align: left;
+		}
+	}
+	&__context {
+		padding: 0 185px 0 63px;
+		p {
+			font-family: $fontFamily;
+			font-size: 20px;
+			line-height: 30px;
+			letter-spacing: 0em;
+			text-align: left;
+			color: #BFBFBF;
+			padding-bottom: 40px;
+		}
+	}
+}
+.cellar {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin-bottom: 104px;
+	&__buttons {
+		display: flex;
+		a {
+			display: inherit;
+			width: 94px;
+			height: 34px;
+			border: 0.5px solid #BFBFBF;
+			box-sizing: border-box;
+			color: #848484;
+			font-family: $fontFamily;
+			font-size: 11px;
+			line-height: 40px;
+			letter-spacing: 0.05em;
+			align-items: center;
+			justify-content: center;
+			&:nth-child(2) {
+				margin: 0 10px;
+			}
+		}
+		p {
+			padding: 10px;
+		}
+
+	}
+	&__arrow {
+		position: absolute;
+		bottom: -7px;
+		right: 0;
+		display: inherit;
+		flex-direction: column;
+		align-self: flex-end;
+		align-content: space-between;
+		a {
+			font-family: $fontFamily;
+			font-size: 14px;
+			letter-spacing: 0em;
+			text-align: left;
+		}
+	}
+}

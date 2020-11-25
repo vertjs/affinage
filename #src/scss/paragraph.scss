@@ -1,0 +1,41 @@
+.paragraph {
+  width: 100%;
+	&__content {
+		width: 920px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-top: 1px solid #E5E5E5;
+  }
+  &__block {
+    display: flex;
+    p {
+      font-family: $fontFamily;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #4B4B4B;
+      padding: 40px 0 0 80px;
+  
+    }
+    img {
+      padding: 40px 80px;
+    }
+  }
+
+  &__picture {
+    align-self: center;
+  }
+  &__text {
+    display: flex;
+    p {
+      font-family: $fontFamily;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+      padding: 40px 40px 40px 0;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+doctype html
+html(lang="ru")
+  include _head.pug
+  body.wrapper
+    main.page
+      section.main
+        section.left
+        section.right
+          include _header.pug
+          include _base.pug
+          .logo
+            img(src="./img/logo.svg", alt="logotip").logo__img
+      section.article
+        .article__content
+          .article__head
+            .article__header
+              h3 биография
+            .article__text
+              table
+                tr
+                  th
+                  th Борис Кустодиев родился 7 марта 1878 года в Астрахани. Отца, преподавателя духовной семинарии, не стало, когда мальчику было чуть больше года. Мать осталась вдовой в 25 лет и содержала четверых детей.
+                tr
+                  th 1887
+                  th Борис сначала учился в церковно-приходской школе, потом в гимназии. Когда ему было девять лет, в город привезли выставку художников-передвижников. Мальчика настолько впечатлила живопись, что он твердо решил научиться рисовать так же искусно. Мать нашла деньги, чтобы Борис смог брать уроки у известного в Астрахани художника Павла Власова.
+                tr
+                  th 1896
+                  th Окончив семинарию, в 1896 году Кустодиев отправился учиться в Москву, но в художественную школу его не приняли: Борису уже исполнилось 18 и он был слишком взрослым. Тогда Кустодиев поехал в Петербург, где подал документы в Высшее художественное училище при Академии художеств.
+          .cellar
+            .cellar__buttons
+              a(href="#" target="_blank")
+                p 105
+              a(href="#" target="_blank")
+                p 96
+              a(href="#" target="_blank")
+            .cellar__arrow
+              a читать больше
+              img(src="./img/icons/arrow.svg")
+      include _slides.pug
+      section.article
+        .article__content
+          .article__head
+            .article__header
+              h3 творчество
+            .article__context
+              p Трудно найти другого живописца, настолько горячо влюбленного в провинциальную Россию: самобытную, яркую, удивляющую.
+      section.paragraph
+        .paragraph__content
+          .paragraph__block
+            p Как и большинство работ автора, пейзажные полотна Кустодиева отличаются особой выразительностью, яркостью и насыщенностью цветовых планов. На картинах Кустодиева природа всегда представляет собой нечто гораздо большее, чем просто пейзажное изображение.
+            img(src="./img/photo/06.jpg")
+          img(src="./img/photo/07.jpg", alt="autumn").paragraph__picture
+          .paragraph__text
+            p Особенности творчества художника Бориса Кустодиева: <br>любил жанр портрета-картины, когда характер героя раскрывается через окружающий его пейзаж, интерьер или даже служащую фоном жанровую сцену; не жалел для бытовых сцен декоративности и зрелищности; с большой симпатией писал жизнь провинции.
+            p Даже в самые беспросветные времена полотна Кустодиева лучились здоровьем, радостью и любовью к жизни. Сахарные сугробы и плавящиеся под солнцем купола. Полыхающие арбузы и красавицы, не уступающие арбузам ни интенсивностью румянца, ни гладкой округлостью форм. 
+          .cellar
+            .cellar__buttons
+              a(href="#" target="_blank")
+                p 105
+              a(href="#" target="_blank")
+                p 96
+              a(href="#" target="_blank")
+            .cellar__arrow
+              a читать больше
+              img(src="./img/icons/arrow.svg")
+      section.maps
+        .maps__content
+          h3 музеи
+          .map
+            img(src="./img/photo/08.jpg")
+            img(src="./img/icons/loc.svg").loc
+          .maps__contacts
+            .maps__item
+              div
+                img(src="./img/icons/geolocation.svg", alt="icon-location")
+                h4 Русский музей
+              p 191186, Санкт-Петербург, <br>Инженерная ул., 4, <br>+7 (812) 595-42-40
+            .maps__item
+              div
+                img(src="./img/icons/geolocation.svg", alt="icon-location")
+                h4 Третьяковская галерея
+              p 119017, Москва, <br>Лаврушинский переулок,10 <br>+7 (495) 957-07-27 
+            .maps__item
+              div
+                img(src="./img/icons/geolocation.svg", alt="icon-location")
+                h4 Мультимедиа Арт Музей
+              p 105064, Москва, <br>Гороховский переулок, 7 <br>+7 (495) 632–16–81
+      footer.footer
+        .footer__content
+          .menu
+            ul
+              li биография
+              li творчество
+              li картины
+              li музеи
+          .footer__networks
+            .footer__refs
+              a(href="#" target="_blank")
+              a(href="#" target="_blank")
+              a(href="#" target="_blank")
+    script(src="./js/script.js")
