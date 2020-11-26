@@ -3,9 +3,16 @@
 	display: flex;
 	flex-shrink: 1;
 	margin: auto 0;
+	@media (max-width: 1023px) {
+		flex-direction: column;
+		padding-left: 20px;
+	}
 }
 .base__years {
 	padding: 0 60px 0 80px;
+	@media (max-width: 1023px) {
+		padding: 10px 0;
+	}
 	h2 {
 		font-family: $headerFamily;
 		font-size: 64px;
@@ -17,10 +24,19 @@
 		color: $mainColor;
 		writing-mode: vertical-rl;
 		transform: rotate(180deg);
+		@media (max-width: 1023px) {
+			font-size: 20px;
+			line-height: 18px;
+			writing-mode: horizontal-tb;
+			transform: rotate(0deg);
+		}
 	}
 }
 .base__biography {
 	max-width: 520px;
+	@media (max-width: 1023px) {
+		max-width: 100%;
+	}
 	h1 {
 		font-family: $headerFamily;
 		font-size: 80px;
@@ -30,6 +46,11 @@
 		letter-spacing: 0em;
 		text-align: left;
 		color: $mainColor;
+		@media (max-width: 1023px) {
+			font-size: 40px;
+			line-height: 44px;
+			padding-bottom: 20px;
+		}
 	}
 	p {
 		font-family: $fontFamily;
@@ -38,6 +59,7 @@
 		letter-spacing: 0em;
 		text-align: left;
 		color: $mainColor;
-		word-wrap: break-word;
+		word-break: break-all;
+		padding: 20px 20px 60px 0px;
 	}
 }

@@ -140,3 +140,26 @@ function addStylesInButtons(idx) {
     nextPhoto.style.cursor = 'auto'
   }
 }
+
+//console.log(window.matchMedia("(max-width: 1023px).matches"))
+const th = document.querySelectorAll('table th:first-of-type ')
+const th2 = document.querySelectorAll('table th:last-of-type ')
+
+
+const allImg = document.querySelector('.allImg')
+
+if(screen.width < 1023) {
+  allImg.before(document.querySelector('.slides__footer'))
+  currentTitle.after(document.querySelector('.slides__gallery > ul'))
+  Array.from(th).forEach(el => {
+    const h4 = document.createElement('h4')
+    h4.textContent = el.textContent
+    el.replaceWith(h4)
+  })
+  Array.from(th2).forEach(el => {
+    const p = document.createElement('p')
+    p.textContent = el.textContent
+    el.replaceWith(p)
+  })
+  
+}

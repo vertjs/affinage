@@ -8,21 +8,38 @@
 		background-color: $addColor;
 		margin: auto;
 		flex-direction: column;
+		@media (max-width: 1023px) {
+			overflow: hidden;
+			max-width: 100%;
+		}
 	}
 	&__gallery {
 		display: flex;
-		align-items: center;	
+		align-items: center;
+		@media (max-width: 1023px) {
+			flex-direction: column;
+		}
+		ul {
+			display:flex;  
+			list-style:none;
+		}
 		li {
-			display:inline; 
-			float:left; 
 			padding: 40px 40px 40px 0;
 			margin:0;
 			position: relative;
+			@media (max-width: 1023px) {
+				padding: 20px 20px 20px 0;
+				clear: both;
+			}
 		}
 		img {
 			width: 120px;
 			height: 90px;
 			z-index: 1;
+			@media (max-width: 1023px) {
+				height: 100%;
+				width: 200px;
+			}
 		}
 		.bg {
 			background-color: rgba(75, 73, 73, 0.8);
@@ -30,23 +47,12 @@
 			width: 120px;
 			height: 90px;
 			z-index: 10;
+			@media (max-width: 1023px) {
+				display: none;
+			}
 		}
 		.active {
 			background-color: transparent;
-		}
-
-		div::after {
-			content: url("../img/icons/all.svg");
-			padding: 8px;
-		}
-		a {
-			align-self: center;
-			font-family: $fontFamily;
-			font-size: 14px;
-			line-height: 20px;
-			letter-spacing: 0em;
-			text-align: left;
-			color: #BFBFBF;
 		}
 	}
 	&__currentPhoto {
@@ -54,6 +60,9 @@
 		overflow: hidden;
 		height: 690px;
 		width: 920px;
+		@media (max-width: 1023px) {
+			display: none;
+		}
 		img {
 			min-width: 100%;
 			min-height: 100%;
@@ -117,10 +126,16 @@
 	&__footer {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 1023px) {
+			align-self: center;
+		}
 	}
 	&__title {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: 1023px) {
+			padding: 60px 0 20px 0;
+		}
 		h4 {
 			font-family: $fontFamily;
 			font-size: 14px;
@@ -143,10 +158,12 @@
 	#prevPhoto, #nextPhoto {
 		background-color: transparent;
 		background-repeat: no-repeat;
-		
 		width: 40px;
 		height: 10px;
 		margin: auto 0;
+		@media (max-width: 1023px) {
+			display: none;
+		}
 	}
 	#prevPhoto {
 		background-image: url(../img/icons/prevPhoto.svg);
@@ -162,5 +179,22 @@
 		background-image: url(../img/icons/nextPhotoActive.svg);
 		cursor: pointer;
 	}
-
+	.allImg a {
+		align-self: center;
+		font-family: $fontFamily;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #BFBFBF;
+	}
+	.allImg::after {
+		content: url("../img/icons/all.svg");
+		padding: 8px;
+	}
+	.allImg {
+		@media (max-width: 1023px) {
+			padding: 60px 0 20px 0;
+		}
+	}
 }

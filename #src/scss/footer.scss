@@ -25,12 +25,22 @@
     display: flex;
     flex-direction: column;
     margin: auto;
+    @media (max-width: 1023px) {
+			max-width: 100%;
+		}
   }
 }
 
 .menu {
   padding: 60px 0 40px 0;
   align-self: center;
+  ul {
+    display:flex;  
+    list-style:none;
+    @media (max-width: 1023px) {
+			flex-direction: column;
+		}  
+  }
   ul li {
 		font-family: $fontFamily;
 		font-size: 14px;
@@ -40,8 +50,6 @@
 		color: $mainColor;
 	}
 	li {
-		display:inline; 
-		float:left; 
 		padding:0 10px;
 		margin:0;
 	}

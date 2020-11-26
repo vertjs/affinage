@@ -82,7 +82,7 @@ function css() {
         overrideBrowserslist: ["last 5 versions"],
       })
     )
-    .pipe(webpCss())
+    //.pipe(webpCss())
     .pipe(dest(path.build.css))
     .pipe(clean_css())
     .pipe(
