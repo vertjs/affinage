@@ -10,8 +10,8 @@ const arrImg = Array.from(listImgGallery)
 const arrSpan = Array.from(listSpanGallery)
 const prevPhoto = document.getElementById('prevPhoto')
 const nextPhoto = document.getElementById('nextPhoto')
-
-console.log(listNetworks)
+const map = document.querySelector('.map > img')
+console.log(map)
 
 const ready = () => {
   document.querySelectorAll(".ibg").forEach(el => {
@@ -161,5 +161,5 @@ if(screen.width < 1023) {
     p.textContent = el.textContent
     el.replaceWith(p)
   })
-  
+  map.src="../img/photo/map-mob.svg"
 }

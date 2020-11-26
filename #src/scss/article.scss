@@ -6,7 +6,8 @@
 		margin: auto;
 		flex-direction: column;
 		@media (max-width: 1023px) {
-      max-width: 100%;
+			max-width: 100%;
+			padding: 0 20px;
     }
 	}
 	&__head {

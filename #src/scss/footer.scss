@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
   &__refs {
     display: flex;
@@ -17,7 +17,7 @@
 			width: 94px;
       height: 34px;
       align-items: center;
-			justify-content: center;
+      justify-content: center;
     }
   }
   &__content {
@@ -26,7 +26,7 @@
     flex-direction: column;
     margin: auto;
     @media (max-width: 1023px) {
-			max-width: 100%;
+      max-width: 100%;
 		}
   }
 }
@@ -34,6 +34,9 @@
 .menu {
   padding: 60px 0 40px 0;
   align-self: center;
+  @media (max-width: 1023px) {
+    padding: 40px 0;
+  }
   ul {
     display:flex;  
     list-style:none;
@@ -51,7 +54,11 @@
 	}
 	li {
 		padding:0 10px;
-		margin:0;
-	}
+    margin:0;
+    @media (max-width: 1023px) {
+      padding-bottom: 20px;
+    }
+  }
+
 }
 

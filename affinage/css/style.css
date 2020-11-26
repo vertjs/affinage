@@ -266,7 +266,6 @@ html {
   letter-spacing: 0em;
   text-align: left;
   color: #E5E5E5;
-  word-break: break-all;
   padding: 20px 20px 60px 0px;
 }
 
@@ -494,7 +493,7 @@ html {
   position: relative;
   overflow: hidden;
   height: 690px;
-  width: 920px;
+  width: 100%;
 }
 
 .slides__currentPhoto img {
@@ -852,19 +851,17 @@ html {
   position: relative;
   z-index: 1;
   display: block;
-  width: 110%;
 }
 
-.map img {
-  max-width: 1200px;
-  max-width: 100%;
+.map img:first-of-type {
+  width: 1200px;
 }
 
 .loc {
   position: absolute;
   z-index: 90;
-  top: 103px;
-  right: 424px;
+  top: 20%;
+  right: 34.8%;
 }
 
 .footer {
@@ -882,7 +879,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .footer__refs {
@@ -969,6 +966,7 @@ html {
 @media (max-width: 1023px) {
   .header {
     padding: 0 20px;
+    margin: 32px 0 60px 0;
     position: relative;
   }
 
@@ -1087,7 +1085,6 @@ html {
   .base__biography h1 {
     font-size: 40px;
     line-height: 44px;
-    padding-bottom: 20px;
   }
 
   .logo {
@@ -1096,6 +1093,7 @@ html {
 
   .article__content {
     max-width: 100%;
+    padding: 0 20px;
   }
 
   .article__head {
@@ -1195,6 +1193,7 @@ html {
 
   .paragraph__content {
     max-width: 100%;
+    padding: 0 20px;
   }
 
   .paragraph__block {
@@ -1212,10 +1211,11 @@ html {
     -ms-flex-item-align: center;
         align-self: center;
     padding: 0;
+    width: 100%;
   }
 
   .paragraph__picture {
-    padding: 20px;
+    padding: 20px 0;
     max-width: 100%;
   }
 
@@ -1239,6 +1239,13 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 40px 20px 80px 20px;
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+
+  .maps__item {
+    padding: 0;
   }
 
   .maps__item:nth-child(2) {
@@ -1248,8 +1255,23 @@ html {
     border-right: 1px solid transparent;
   }
 
+  .map img:first-of-type {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .loc {
+    top: 23.7%;
+    right: 40.8%;
+  }
+
   .footer__content {
     max-width: 100%;
+  }
+
+  .menu {
+    padding: 40px 0;
   }
 
   .menu ul {
@@ -1257,5 +1279,9 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .menu li {
+    padding-bottom: 20px;
   }
 }
