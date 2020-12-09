@@ -11,7 +11,9 @@ const arrSpan = Array.from(listSpanGallery)
 const prevPhoto = document.getElementById('prevPhoto')
 const nextPhoto = document.getElementById('nextPhoto')
 const map = document.querySelector('.map > img')
-console.log(map)
+import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+/* 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js' */
+
 
 const ready = () => {
   document.querySelectorAll(".ibg").forEach(el => {
@@ -141,16 +143,24 @@ function addStylesInButtons(idx) {
   }
 }
 
-//console.log(window.matchMedia("(max-width: 1023px).matches"))
 const th = document.querySelectorAll('table th:first-of-type ')
 const th2 = document.querySelectorAll('table th:last-of-type ')
-
 
 const allImg = document.querySelector('.allImg')
 
 if(screen.width < 1023) {
-  allImg.before(document.querySelector('.slides__footer'))
-  currentTitle.after(document.querySelector('.slides__gallery > ul'))
+  document.querySelector('.slides__gallery').classList.add('swiper-container')
+  document.querySelector('.slides__gallery ul').classList.add('swiper-wrapper')
+  const wrapper = document.querySelector('.swiper-wrapper')
+  const container = document.querySelector('.swiper-container')
+  const title = document.querySelector('.slides__title h4')
+  const pagination = document.createElement('div')
+  pagination.classList.add('swiper-pagination')
+
+  wrapper.after(pagination)
+  container.prepend(title)
+  document.querySelector('.slides__footer').remove()
+  
   Array.from(th).forEach(el => {
     const h4 = document.createElement('h4')
     h4.textContent = el.textContent
@@ -162,4 +172,28 @@ if(screen.width < 1023) {
     el.replaceWith(p)
   })
   map.src="../img/photo/map-mob.svg"
+  let liArr = document.querySelectorAll('.slides__gallery li')
+  Array.from(liArr).forEach(el => el.classList.add('swiper-slide'))
+  
+    
+  let swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.5,
+    centeredSlides: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    }
+  });
+
+
+  Array.from(liArr).forEach(el => el.addEventListener('touchstart', () => handle()))
+
+  function handle() {
+    setTimeout(function () {
+      title.textContent = document.querySelector('.swiper-slide-active img').alt
+    }, 200)
+  }
 }
+
+
