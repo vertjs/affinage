@@ -70,7 +70,7 @@
 
 		.addanim {
 			animation-name: add_anim;
-			animation-duration: 4s;
+			animation-duration: 4s; //4
 			animation-timing-function: linear;
 			animation-direction: normal;
 			animation-delay: 0;
@@ -97,7 +97,7 @@
 
 		.remanim {
 			animation-name: rem_anim;
-			animation-duration: 6s;
+			animation-duration: 4s; // 6
 			animation-timing-function: linear;
 			animation-iteration-count: 1;
 			animation-direction: normal;
