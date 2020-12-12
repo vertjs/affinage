@@ -8,7 +8,14 @@ const arrSpan = Array.from(document.querySelectorAll('.slides__gallery span'))
 const prevPhoto = document.getElementById('prevPhoto')
 const nextPhoto = document.getElementById('nextPhoto')
 const map = document.querySelector('.map > img')
-
+let spanActive = document.querySelector('.bg.active')
+let id;
+function findId() {
+  id = arrSpan.indexOf(document.querySelector('span.active'))
+  return id;
+}
+findId() 
+let obj = {id, spanActive, currentTitle, currentNum, currentPhoto}
 import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
 const ready = () => {
@@ -18,9 +25,9 @@ const ready = () => {
   Array.from(listNetworks).forEach((el, i) => addImgToButtons(el, i, '../img/icons/footer/0')) // добавить иконку в соц.ссылки
   arrSpan.forEach(el => el.addEventListener('click', activeSpanGallery)) // активировать картинку в галлерее при нажатии
   document.querySelector('.search-button').addEventListener('click', activeInput) // активировать input при нажатии на поиск
+  console.log(obj)
 }
-
-document.addEventListener("DOMContentLoaded", ready);
+document.addEventListener("DOMContentLoaded", ready)
 
 function activeInput() {
   document.querySelector('.search-text').focus()
@@ -35,20 +42,9 @@ function addImgToButtons(el, i, src) {
 function activeSpanGallery(e) {
   arrSpan.forEach(el => el.classList.remove('active'))
   e.currentTarget.classList.add('active')
+  findId() 
   toggleClassCurrentPhoto()
-
-  setTimeout(() => {
-    currentPhoto.classList.add('addanim') 
-    currentPhoto.classList.toggle('remanim', false) 
-
-    currentPhoto.src = e.target.nextElementSibling.src
-    currentPhoto.alt = e.target.nextElementSibling.alt
-    
-    currentTitle.textContent = e.target.nextElementSibling.alt
-    let idx = arrSpan.indexOf(e.target)
-    addStylesInButtons(idx) // переключение стилей кнопок
-    currentNum.textContent = ++idx
-  }, 1000)
+  toggleAnim()
 }
 
 for(const key of ['nextPhoto', 'prevPhoto']) {
@@ -57,36 +53,39 @@ for(const key of ['nextPhoto', 'prevPhoto']) {
 };
 
 function leafing(e) {
-  let idx = arrSpan.indexOf(document.querySelector('span.active'))
-  if(e.currentTarget.id == 'nextPhoto' && idx < arrSpan.length - 1) {
-    changeStylesSpan(idx)
-    changeStylesPhoto(++idx) 
-  } else if (e.currentTarget.id == 'prevPhoto' && idx > 0) {
-    changeStylesSpan(idx)
-    changeStylesPhoto(--idx) 
+  findId() 
+  if(e.currentTarget.id == 'nextPhoto' && id < arrSpan.length - 1) {
+    changeStylesSpan(id)
+    changeStylesPhoto(++id) 
+  } else if (e.currentTarget.id == 'prevPhoto' && id > 0) {
+    changeStylesSpan(id)
+    changeStylesPhoto(--id) 
   }
 }
 
 /*функция ниже меняет текущее фото, название и пагинацию*/
-function changeStylesPhoto(idx) {
+function changeStylesPhoto(id) {
+  arrSpan[id].classList.add('active')
+  toggleAnim()
+}
+
+function toggleAnim() {
   setTimeout(() => {
     currentPhoto.classList.add('addanim') 
     currentPhoto.classList.toggle('remanim', false) 
   
-    currentPhoto.src = arrImg[idx].src
-    currentPhoto.alt = arrImg[idx].alt
-  
-    arrSpan[idx].classList.add('active')
-    addStylesInButtons(idx)
-  
-    currentTitle.textContent = arrImg[idx].alt
-    currentNum.textContent = ++idx
+    currentPhoto.src = arrImg[id].src
+    currentPhoto.alt = arrImg[id].alt
+    currentTitle.textContent = arrImg[id].alt
+    
+    addStylesInButtons(id) // переключение стилей кнопок
+    currentNum.textContent = ++id
   }, 1000)
 }
 
 /*функция ниже меняет span в галлерее при перелистывании*/
-function changeStylesSpan(idx) {
-  arrSpan[idx].classList.remove('active')
+function changeStylesSpan(id) {
+  arrSpan[id].classList.remove('active')
   toggleClassCurrentPhoto()
 }
 
@@ -169,4 +168,3 @@ if(screen.width < 1023) {
     }, 200)
   }
 }
-
