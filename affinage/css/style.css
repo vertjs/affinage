@@ -715,6 +715,7 @@ html {
   color: #F5F5F5;
   -ms-flex-item-align: center;
       align-self: center;
+  padding: 15px;
 }
 
 .slides #prevPhoto,
