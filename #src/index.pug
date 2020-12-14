@@ -15,7 +15,7 @@ html(lang="ru")
         .article__content
           .article__head
             .article__header
-              h3 биография
+              h3#biography биография
             .article__text
               table
                 tr
@@ -38,7 +38,7 @@ html(lang="ru")
               a читать больше
               img(src="./img/icons/arrow.svg")
       include _slides.pug
-      section.article
+      section.article#creation
         .article__content
           .article__head
             .article__header
@@ -64,7 +64,7 @@ html(lang="ru")
             .cellar__arrow
               a читать больше
               img(src="./img/icons/arrow.svg")
-      section.maps
+      section.maps#museums
         .maps__content
           h3 музеи
           .map
@@ -100,5 +100,6 @@ html(lang="ru")
               a(href="#" target="_blank")
               a(href="#" target="_blank")
     script(type="module" src="./js/script.js")
+    script(src="./js/menu-mob.js")
  
     

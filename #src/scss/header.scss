@@ -52,28 +52,3 @@
 		display: none;
 	}
 }
-
-.icon-menu {
-	@media (max-width:1023px){
-		display: block;
-		position: absolute;
-    top: 0px;
-    right: 20px;
-		width:30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span {
-      @include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #fff;
-			&:first-child{top: 0px;}
-			&:last-child{top: auto;bottom: 0px;}
-		}
-		&.active{
-			span {
-        @include scale(0);background-color: #fff;
-				&:first-child{@include rotate(-45deg);top: 8px;}
-				&:last-child{@include rotate(45deg);bottom: 8px;}
-			}
-		}
-	}
-}

@@ -15,7 +15,6 @@ function findId() {
   return id;
 }
 findId() 
-let obj = {id, spanActive, currentTitle, currentNum, currentPhoto}
 import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
 const ready = () => {
@@ -25,7 +24,6 @@ const ready = () => {
   Array.from(listNetworks).forEach((el, i) => addImgToButtons(el, i, '../img/icons/footer/0')) // добавить иконку в соц.ссылки
   arrSpan.forEach(el => el.addEventListener('click', activeSpanGallery)) // активировать картинку в галлерее при нажатии
   document.querySelector('.search-button').addEventListener('click', activeInput) // активировать input при нажатии на поиск
-  console.log(obj)
 }
 document.addEventListener("DOMContentLoaded", ready)
 
@@ -147,8 +145,7 @@ if(screen.width < 1023) {
   map.src="../img/photo/map-mob.svg"
   let liArr = document.querySelectorAll('.slides__gallery li')
   Array.from(liArr).forEach(el => el.classList.add('swiper-slide'))
-  
-    
+      
   let swiper = new Swiper('.swiper-container', {
     slidesPerView: 1.5,
     centeredSlides: true,
@@ -158,7 +155,6 @@ if(screen.width < 1023) {
       type: 'fraction',
     }
   });
-
 
   Array.from(liArr).forEach(el => el.addEventListener('touchstart', () => handle()))
 

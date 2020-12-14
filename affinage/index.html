@@ -26,6 +26,14 @@
               </ul>
             </div>
             <div class="icon-menu"><span></span><span></span><span></span></div>
+            <div class="mobile-menu">
+              <ul class="mobile-menu__list">
+                <li><a class="mobile-menu__link" href="#biography">биография</a></li>
+                <li> <a class="mobile-menu__link" href="#creation">творчество</a></li>
+                <li> <a class="mobile-menu__link" href="#paintings">картины</a></li>
+                <li><a class="mobile-menu__link" href="#museums">музеи</a></li>
+              </ul>
+            </div>
           </header>
           <div class="base">
             <div class="base__years">
@@ -43,7 +51,7 @@
         <div class="article__content">
           <div class="article__head">
             <div class="article__header">
-              <h3>биография</h3>
+              <h3 id="biography">биография</h3>
             </div>
             <div class="article__text">
               <table>
@@ -70,7 +78,7 @@
           </div>
         </div>
       </section>
-      <section class="slides">
+      <section class="slides" id="paintings">
         <div class="slides__content"> 
           <div class="slides__gallery">
             <ul>
@@ -93,7 +101,7 @@
           </div>
         </div>
       </section>
-      <section class="article">
+      <section class="article" id="creation">
         <div class="article__content">
           <div class="article__head">
             <div class="article__header">
@@ -122,7 +130,7 @@
           </div>
         </div>
       </section>
-      <section class="maps">
+      <section class="maps" id="museums">
         <div class="maps__content">
           <h3>музеи</h3>
           <div class="map"><img src="./img/photo/map.svg" alt="map"><img class="loc" src="./img/icons/loc.svg" alt="location"></div>
@@ -165,5 +173,6 @@
       </footer>
     </main>
     <script type="module" src="./js/script.js"></script>
+    <script src="./js/menu-mob.js"></script>
   </body>
 </html>

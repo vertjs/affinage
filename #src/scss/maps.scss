@@ -9,7 +9,7 @@
     align-items: center;
     border-top: 1px solid #E5E5E5;
     @media (max-width: 1023px) {
-      max-width: 100%;
+      width: 100%;
 		}
 	}
   h3 {
@@ -81,7 +81,7 @@
   img:first-of-type {
     width: 1200px;
     @media (max-width: 1023px) {
-      width: 100%;
+     width: 100%;
      object-fit: contain;
     }
   }
@@ -92,7 +92,7 @@
   top: 20%;
   right: 34.8%;
   @media (max-width: 1023px) {
-    top: 23.7%;
-    right: 40.8%;
+    top: 29.4%;
+    right: 44.5%;
   }
 }
