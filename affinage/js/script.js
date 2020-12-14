@@ -19,9 +19,9 @@ import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
 const ready = () => {
   Array.from(listArticleFooters).forEach(el => {
-    el.querySelectorAll('.cellar__buttons > a').forEach((el, i) => addImgToButtons(el, i, '../img/icons/networks/0'))
+    el.querySelectorAll('.cellar__buttons > a').forEach((el, i) => addImgToButtons(el, i, './img/icons/networks/0'))
   }) // добавить иконку в соц.кнопки
-  Array.from(listNetworks).forEach((el, i) => addImgToButtons(el, i, '../img/icons/footer/0')) // добавить иконку в соц.ссылки
+  Array.from(listNetworks).forEach((el, i) => addImgToButtons(el, i, './img/icons/footer/0')) // добавить иконку в соц.ссылки
   arrSpan.forEach(el => el.addEventListener('click', activeSpanGallery)) // активировать картинку в галлерее при нажатии
   document.querySelector('.search-button').addEventListener('click', activeInput) // активировать input при нажатии на поиск
 }
@@ -33,7 +33,7 @@ function activeInput() {
 
 function addImgToButtons(el, i, src) {
   let img = new Image();
-  img.src = src + ++i +'.svg'
+  img.src = src + (++i) +'.svg'
   el.insertAdjacentElement('afterbegin', img)
 }
 
@@ -142,7 +142,7 @@ if(screen.width < 1023) {
     p.textContent = el.textContent
     el.replaceWith(p)
   })
-  map.src="../img/photo/map-mob.svg"
+  map.src="./img/photo/map-mob.svg"
   let liArr = document.querySelectorAll('.slides__gallery li')
   Array.from(liArr).forEach(el => el.classList.add('swiper-slide'))
       

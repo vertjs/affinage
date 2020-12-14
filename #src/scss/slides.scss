@@ -132,6 +132,7 @@
 	&__title {
 		display: flex;
 		flex-direction: column;
+		padding: 20px 0;
 		@media (max-width: 1023px) {
 			padding: 60px 0 20px 0;
 		}
@@ -151,6 +152,7 @@
 			text-align: right;
 			color: #F5F5F5;
 			align-self: center;
+			padding: 15px;
 		}
 		
 	}
