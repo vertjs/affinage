@@ -78,6 +78,9 @@
   position: relative;
   z-index: 1;
   display: block;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
   img:first-of-type {
     width: 1200px;
     @media (max-width: 1023px) {
@@ -92,7 +95,7 @@
   top: 20%;
   right: 34.8%;
   @media (max-width: 1023px) {
-    top: 29.4%;
-    right: 44.5%;
+    top: 28%;
+    right: 44%;
   }
 }
