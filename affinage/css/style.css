@@ -1153,6 +1153,7 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto;
+    min-height: auto;
   }
 
   .left {
