@@ -153,7 +153,7 @@ html {
   background-color: transparent;
 }
 
-.header__menu ul li {
+.header__menu ul a {
   font-family: "Helvetica";
   font-size: 14px;
   line-height: 16px;
@@ -1014,7 +1014,7 @@ html {
   list-style: none;
 }
 
-.menu ul li {
+.menu ul a {
   font-family: "Helvetica";
   font-size: 14px;
   line-height: 16px;
